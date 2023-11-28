@@ -1,0 +1,9 @@
+{
+    "name": "me-system",
+    "version": "0.1.0",
+    "title": "ME System",
+    "author": "pfg",
+    "factorio_version": "1.1",
+    "dependencies": ["base >= 1.1"],
+    "description": "adds the me system"
+}
