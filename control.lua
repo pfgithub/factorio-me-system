@@ -1,9 +1,13 @@
 if global["me-system"] == nil then
-    global["me-system"] = {
-        items = {},
-    }
+    global["me-system"] = {}
 end
 local me_system = global["me-system"]
+if me_system.items == nil then
+    me_system.items = {}
+end
+if me_system.tick_enabled == nil then
+    me_system.tick_enabled = true
+end
 
 function tick_mod(debug_log)
     for _, surface in pairs(game.surfaces) do
@@ -47,11 +51,17 @@ function tick_mod(debug_log)
 end
 
 script.on_event(defines.events.on_tick, function(event)
-    tick_mod(false)
+    if me_system.tick_enabled then
+        tick_mod(false)
+    end
 end)
 
 commands.add_command("tick_me_system", nil, function(command)
-    -- tick_mod(true)
+    me_system.tick_enabled = false
+    tick_mod(true)
+end)
+commands.add_command("resume_me_system", nil, function(command)
+    me_system.tick_enabled = true
 end)
 
 -- TODO:
