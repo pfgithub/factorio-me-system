@@ -60,8 +60,13 @@ end)
 
 -- more:
 -- storage drives
+-- -- limits the number of bytes in the system
+-- terminal
+-- -- allows you to view all the items in the system and take them out
 -- channel limits (number of things on one system)
--- mediorite needed for crafting
+-- -- from a core you get 8 channels on each side, or 32 channels with a dense cable
+-- metiorite needed for crafting
+-- -- that would be funny if we're just copying applied energistics
 -- ...
 
 -- /c game.reload_mods()
